@@ -2,9 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 export interface ChromaItem {
   image: string;
-  title: string;
-  subtitle: string;
-  handle?: string;
   location?: string;
   borderColor?: string;
   gradient?: string;
@@ -39,54 +36,36 @@ const ChromaGridNew: React.FC<ChromaGridProps> = ({
   const demo: ChromaItem[] = [
     {
       image: "https://i.pravatar.cc/300?img=8",
-      title: "Alex Rivera",
-      subtitle: "Full Stack Developer",
-      handle: "@alexrivera",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://github.com/",
     },
     {
       image: "https://i.pravatar.cc/300?img=11",
-      title: "Jordan Chen",
-      subtitle: "DevOps Engineer",
-      handle: "@jordanchen",
       borderColor: "#10B981",
       gradient: "linear-gradient(210deg,#10B981,#000)",
       url: "https://linkedin.com/in/",
     },
     {
       image: "https://i.pravatar.cc/300?img=3",
-      title: "Morgan Blake",
-      subtitle: "UI/UX Designer",
-      handle: "@morganblake",
       borderColor: "#F59E0B",
       gradient: "linear-gradient(165deg,#F59E0B,#000)",
       url: "https://dribbble.com/",
     },
     {
       image: "https://i.pravatar.cc/300?img=16",
-      title: "Casey Park",
-      subtitle: "Data Scientist",
-      handle: "@caseypark",
       borderColor: "#EF4444",
       gradient: "linear-gradient(195deg,#EF4444,#000)",
       url: "https://kaggle.com/",
     },
     {
       image: "https://i.pravatar.cc/300?img=25",
-      title: "Sam Kim",
-      subtitle: "Mobile Developer",
-      handle: "@thesamkim",
       borderColor: "#8B5CF6",
       gradient: "linear-gradient(225deg,#8B5CF6,#000)",
       url: "https://github.com/",
     },
     {
       image: "https://i.pravatar.cc/300?img=60",
-      title: "Tyler Rodriguez",
-      subtitle: "Cloud Architect",
-      handle: "@tylerrod",
       borderColor: "#06B6D4",
       gradient: "linear-gradient(135deg,#06B6D4,#000)",
       url: "https://aws.amazon.com/",
@@ -183,19 +162,12 @@ const ChromaGridNew: React.FC<ChromaGridProps> = ({
           <div className="relative z-10 flex-1 p-[10px] box-border">
             <img
               src={c.image}
-              alt={c.title}
+              alt="Chroma Item"
               loading="lazy"
               className="w-full h-full object-cover rounded-[10px]"
             />
           </div>
-          <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
-            {c.handle && (
-              <span className="text-[0.95rem] opacity-80 text-right">
-                {c.handle}
-              </span>
-            )}
-            <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>
+          <footer className="relative z-10 p-3 text-white font-sans">
             {c.location && (
               <span className="text-[0.85rem] opacity-85 text-right">
                 {c.location}
@@ -205,7 +177,7 @@ const ChromaGridNew: React.FC<ChromaGridProps> = ({
         </article>
       ))}
       <div
-        className="absolute inset-x-0 top-[-30px] bottom-0 pointer-events-none z-30 "
+        className="absolute inset-x-0 top-[-30px] bottom-0 pointer-events-none z-30"
         style={{
           backdropFilter: "grayscale(1) brightness(0.78)",
           WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
