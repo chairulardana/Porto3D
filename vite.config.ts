@@ -10,6 +10,7 @@ const root = path.resolve(__dirname, './src')
 export default defineConfig({
   plugins: [react(), TanStackRouterVite(),tailwindcss()],
   resolve: {
+       extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'], 
     alias: {
       '@/': `${root}/`,
     },
