@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import UTImg from "../../Assets/unitedtractors.png";
+import UTImg from "../../assets/unitedtractors.png";
 
 
 export interface ChromaItem {
